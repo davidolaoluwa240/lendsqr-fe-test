@@ -1,0 +1,42 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.auth-layout {
+  &__container {
+    max-width: 91% !important;
+  }
+
+  &__header {
+    padding-top: 10.6rem;
+  }
+
+  &__nav-logo {
+    width: 173.76px;
+    height: 36px;
+    vertical-align: middle;
+  }
+
+  &__main {
+    @include flex-box();
+  }
+
+  &__left {
+    margin-top: 13.9rem;
+    margin-right: 6.9rem;
+  }
+
+  &__photo {
+    width: 600px;
+    height: 337.57px;
+    vertical-align: middle;
+  }
+
+  &__right {
+    flex-grow: 1;
+    background: getColor("white-color");
+    box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+    padding: 0px 10rem;
+  }
+}
