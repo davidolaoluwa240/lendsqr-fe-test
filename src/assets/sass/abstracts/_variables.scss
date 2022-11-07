@@ -1,0 +1,56 @@
+$colors: (
+  "primary-color": #213f7d,
+  "secondary-color": #39cdcc,
+  "tertiary-color": #545f7d,
+  "white-color": #ffffff,
+  "dark-color": #000000,
+);
+
+$weights: (
+  "thin": 300,
+  "default": 400,
+  "thick": 500,
+  "extra-thick": 600,
+  "bold": 700,
+  "extra-bold": 800,
+  "bolder": 900,
+);
+
+$font-sizes: (
+  "extra-small": 1.3rem,
+  "small": 1.4rem,
+  "medium": 1.6rem,
+  "extra-medium": 1.6rem,
+  "large": 1.8rem,
+  "extra-large": 2.2rem,
+);
+
+$font-family: (
+  "font-family-primary": (
+    "Work Sans",
+    sans-serif,
+  ),
+  "font-family-secondary": (
+    "Avernir Next",
+    sans-serif,
+  ),
+);
+
+$base-fonts: (
+  "font-size": 1.6rem,
+  "font-family":
+    map-get(
+      $map: $font-family,
+      $key: font-family-primary,
+    ),
+  "line-height": 16.42px,
+  "font-weight": 400,
+  "color":
+    map-get(
+      $map: $colors,
+      $key: tertiary-color,
+    ),
+);
+
+$button-sizes: ();
+$button-shape: ();
