@@ -16,6 +16,9 @@ interface Props {
   type?: "submit" | "button";
   disabled?: boolean;
   isLoading?: boolean;
+  onClick?: (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => void;
 }
 
 const Button: React.FC<Props> = ({
@@ -25,8 +28,9 @@ const Button: React.FC<Props> = ({
   type,
   disabled,
   isLoading,
+  onClick,
 }) => {
-  // Content Rendering Condition
+  // Detemine The Type Content To Render Based On Loading State
   const buttonContent = isLoading ? (
     <ThreeDots
       height="26"
@@ -44,14 +48,19 @@ const Button: React.FC<Props> = ({
   // Render Link Component When (to) Is Specified
   if (to)
     return (
-      <Link to={to} className={`btn ${className}`}>
+      <Link to={to} className={`btn ${className}`} onClick={onClick}>
         {buttonContent}
       </Link>
     );
 
   // Render Button Element When (to) Isn't Specified
   return (
-    <button type={type} className={`btn ${className}`} disabled={disabled}>
+    <button
+      type={type}
+      className={`btn ${className}`}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {buttonContent}
     </button>
   );

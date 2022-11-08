@@ -5,7 +5,7 @@ import React, { FormEvent } from "react";
 interface Props {
   className?: string;
   children: React.ReactNode;
-  handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  handleSubmit?: (e: FormEvent<HTMLFormElement>) => void;
 }
 
 const Form: React.FC<Props> = ({ className, handleSubmit, children }) => {

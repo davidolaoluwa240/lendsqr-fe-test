@@ -1,0 +1,40 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.page-not-found {
+  &__container {
+    min-height: 100vh;
+    max-width: 600px;
+    @include flex-box(center, center, column);
+
+    @include respond(phone) {
+      max-width: 92%;
+    }
+  }
+
+  &__brand {
+    width: 240px;
+
+    @include respond(phone) {
+      width: auto;
+    }
+  }
+
+  &__heading {
+    font-size: 4.8rem;
+    margin: 2.9rem 0;
+    color: getColor("secondary-color");
+    line-height: 28px;
+
+    @include respond(phone) {
+      font-size: 3.8rem;
+    }
+  }
+
+  &__btn {
+    font-size: 1.7rem;
+    font-weight: getWeight("bold");
+  }
+}

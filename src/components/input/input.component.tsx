@@ -10,13 +10,13 @@ interface Props {
   type?: React.HTMLInputTypeAttribute;
   className?: string;
   formGroupClass?: string;
-  placeholder: string;
+  placeholder?: string;
   label?: string;
   value: string;
-  error: string;
-  touched: boolean;
+  error?: string;
+  touched?: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<Props> = ({
@@ -41,13 +41,30 @@ const Input: React.FC<Props> = ({
     setIsPasswordVisible(!isPasswordVisible);
   };
 
+  // Render Label Element Conditionally
+  const renderedLabel = label && (
+    <label className="form__label" htmlFor={name}>
+      {label}
+    </label>
+  );
+
+  // Render Password Visibility Element Conditionally
+  const renderedPasswordVisibility = type === "password" && (
+    <span className="form__visibility" onClick={onTogglePasswordVisiblity}>
+      {isPasswordVisible ? "HIDE" : "SHOW"}
+    </span>
+  );
+
+  // Render Error Element Conditionally
+  const renderedError = error && touched && (
+    <div className="form__error-wrapper">
+      <span className="form__error">{error}</span>
+    </div>
+  );
+
   return (
     <div className={`form__group ${formGroupClass}`}>
-      {label && (
-        <label className="form__label" htmlFor={name}>
-          {label}
-        </label>
-      )}
+      {renderedLabel}
       <div className="form__control-wrapper">
         <input
           className={`form__control ${className}`}
@@ -59,20 +76,9 @@ const Input: React.FC<Props> = ({
           onBlur={onBlur}
           value={value}
         />
-        {type === "password" && (
-          <span
-            className="form__visibility"
-            onClick={onTogglePasswordVisiblity}
-          >
-            {isPasswordVisible ? "HIDE" : "SHOW"}
-          </span>
-        )}
+        {renderedPasswordVisibility}
       </div>
-      {error && touched && (
-        <div className="form__error-wrapper">
-          <span className="form__error">{error}</span>
-        </div>
-      )}
+      {renderedError}
     </div>
   );
 };
@@ -81,6 +87,8 @@ Input.defaultProps = {
   className: "",
   formGroupClass: "",
   type: "text",
+  placeholder: "",
+  label: "",
 };
 
 export default Input;

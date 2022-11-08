@@ -1,6 +1,7 @@
 // Modules
 import React from "react";
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 // Components
 import { Link } from "react-router-dom";
@@ -18,6 +19,7 @@ interface Props {
 }
 
 const Login: React.FC<Props> = ({ className }) => {
+  const navigate = useNavigate();
   const {
     values,
     touched,
@@ -39,6 +41,7 @@ const Login: React.FC<Props> = ({ className }) => {
         formikHelpers.resetForm();
 
         //2). Redirect To Dashboard
+        navigate("/dashboard/users");
       }, 3000);
     },
   });
