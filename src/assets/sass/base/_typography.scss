@@ -5,3 +5,11 @@ body {
   line-height: getBaseFont("line-height");
   color: getBaseFont("color");
 }
+
+.primary-heading {
+  font-weight: getWeight("bold");
+  font-family: map-get($map: $font-family, $key: "font-family-secondary");
+  font-size: 4rem;
+  line-height: 54.64px;
+  letter-spacing: -4%;
+}

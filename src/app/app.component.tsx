@@ -1,6 +1,9 @@
 // Modules
 import React from "react";
 
+// Pages
+import { Login } from "../pages";
+
 // Components
 import { Routes, Route, Navigate } from "react-router-dom";
 
@@ -13,7 +16,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Navigate to="/auth/login" />} />
-          <Route path="login" element={<div>login page</div>} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </div>

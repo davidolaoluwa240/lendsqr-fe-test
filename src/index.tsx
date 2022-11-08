@@ -8,6 +8,7 @@ import App from "./app/app.component";
 
 // Styles
 import "./assets/sass/main.scss";
+// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 // React Mounting
 const root = ReactDOM.createRoot(

@@ -1,0 +1,50 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.btn {
+  &,
+  &:link,
+  &:target {
+    display: block;
+    text-align: center;
+    border-radius: 8px;
+    font-family: inherit;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  // States
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  // Color
+  &--primary {
+    background: getColor("secondary-color");
+    color: getColor("white-color");
+
+    &:hover {
+      background: rgba(getColor("secondary-color"), 0.8);
+    }
+  }
+
+  // Sizes
+  @each $name, $value in $button-sizes {
+    &--#{$name} {
+      padding: $value;
+    }
+  }
+
+  // Shape
+  @each $name, $value in $button-shapes {
+    &--#{$name} {
+      border-radius: $value;
+    }
+  }
+}

@@ -2,7 +2,7 @@
 import React from "react";
 
 // Components
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 // Style
 import "./authLayout.styles.scss";
@@ -23,11 +23,13 @@ const AuthLayout: React.FC<Props> = ({ className }) => {
         <header className="auth-layout__header">
           <nav className="auth-layout__nav">
             <div className="auth-layout__nav-brand">
-              <img
-                className="auth-layout__nav-logo"
-                src={lendSqrLogo}
-                alt="lendsqr logo"
-              />
+              <Link to="/auth/login" className="auth-layout__nav-logo-link">
+                <img
+                  className="auth-layout__nav-logo"
+                  src={lendSqrLogo}
+                  alt="lendsqr logo"
+                />
+              </Link>
             </div>
           </nav>
         </header>

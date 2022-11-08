@@ -1,5 +1,11 @@
 @font-face {
-  font-family: "Avernir Next";
-  src: url("./Avenir-Next-Font.ttf");
-  src: url("./Avenir-Next-Font.ttf") format("truetype");
+  font-family: "Avenir Next";
+  font-weight: 400;
+  src: url("./avenir-next-regular.otf");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  src: url("./avenir-next-bold.otf");
 }

@@ -2,6 +2,7 @@ $colors: (
   "primary-color": #213f7d,
   "secondary-color": #39cdcc,
   "tertiary-color": #545f7d,
+  "danger-color": #c80707,
   "white-color": #ffffff,
   "dark-color": #000000,
 );
@@ -31,7 +32,7 @@ $font-family: (
     sans-serif,
   ),
   "font-family-secondary": (
-    "Avernir Next",
+    "Avenir Next",
     sans-serif,
   ),
 );
@@ -52,5 +53,11 @@ $base-fonts: (
     ),
 );
 
-$button-sizes: ();
-$button-shape: ();
+$button-sizes: (
+  xm: 1.2rem 3rem 1.1rem 3.1rem,
+  sm: 1.5rem 3rem 1.3rem 3.1rem,
+);
+
+$button-shapes: (
+  rsm: 8px,
+);

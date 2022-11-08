@@ -6,6 +6,7 @@
 .auth-layout {
   &__container {
     max-width: 91% !important;
+    font-family: map-get($map: $font-family, $key: font-family-secondary);
   }
 
   &__header {
@@ -24,7 +25,6 @@
 
   &__left {
     margin-top: 13.9rem;
-    margin-right: 6.9rem;
   }
 
   &__photo {

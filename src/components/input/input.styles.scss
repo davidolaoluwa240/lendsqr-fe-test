@@ -1,0 +1,53 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.form {
+  &__control-wrapper {
+    position: relative;
+  }
+
+  &__control {
+    background: getColor("white-color");
+    border: 2px solid rgba(getColor("tertiary-color"), 0.15);
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 1.75rem 1.6rem 1.25rem 1.6rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: 19px;
+    transition: all 0.3s ease-in-out;
+
+    &::placeholder {
+      color: rgba(getColor("tertiary-color"), 0.6);
+      font-size: 1.4rem;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: getColor("secondary-color");
+    }
+  }
+
+  &__visibility {
+    @include absCenter;
+    left: auto;
+    right: 0;
+    color: getColor("secondary-color");
+    font-weight: getWeight("extra-thick");
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  &__error {
+    color: rgba(getColor("danger-color"), 0.8);
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 1.3rem;
+  }
+}

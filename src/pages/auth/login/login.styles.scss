@@ -1,0 +1,44 @@
+// ABSTRACTS
+@import "../../../assets/sass/abstracts/functions";
+@import "../../../assets/sass/abstracts/mixins";
+@import "../../../assets/sass/abstracts/variables";
+
+.login {
+  &__container {
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__subheading {
+    font-size: 2rem;
+    line-height: 27.32px;
+    color: getColor("tertiary-color");
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+  }
+
+  &__group {
+    &:not(:last-of-type) {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    margin-top: 2.4rem;
+    display: block;
+    font-weight: getWeight("extra-thick");
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: getColor("secondary-color");
+  }
+
+  &__btn {
+    font-size: 1.4rem;
+    line-height: 19px;
+    text-transform: uppercase;
+    font-weight: getWeight("extra-thick");
+    margin-top: 3rem;
+  }
+}
