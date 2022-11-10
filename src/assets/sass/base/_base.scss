@@ -31,3 +31,20 @@ a {
 ul {
   list-style-type: none;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: getColor("primary-color");
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(getColor("primary-color"), 0.8);
+}
