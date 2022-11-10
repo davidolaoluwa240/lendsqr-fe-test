@@ -21,7 +21,7 @@ import "./dashboardSideNavbar.styles.scss";
 interface Props {
   className?: string;
   open?: boolean;
-  onCloseModal?: () => void;
+  onCloseModal?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const DashboardSideNavbar: React.FC<Props> = ({
@@ -29,6 +29,26 @@ const DashboardSideNavbar: React.FC<Props> = ({
   open,
   onCloseModal,
 }) => {
+  /**
+   * Close Sidebar Menu Conditionally
+   */
+  const handleCloseSidebarMenu = (e: React.MouseEvent<HTMLElement>): void => {
+    const target = e.target as HTMLElement;
+    // Close side navbar if modal, navlink and close button is clicked
+    const targetClass = target?.classList;
+    const navLinkClass = target?.closest(
+      ".dashboard-layout-sidenavbar__link"
+    ) as HTMLElement;
+
+    if (
+      targetClass.contains("modal") ||
+      targetClass?.contains("dashboard-layout-sidenavbar__close") ||
+      navLinkClass?.classList?.contains("dashboard-layout-sidenavbar__link")
+    ) {
+      onCloseModal?.(false);
+    }
+  };
+
   // Sidebar Navigation Items Element
   const renderedNavigationItems = sideNavbarList.map((item, index) => {
     if (!item.group) {
@@ -65,7 +85,7 @@ const DashboardSideNavbar: React.FC<Props> = ({
       className={`dashboard-layout-sidenavbar ${className} ${
         open ? "modal" : ""
       }`}
-      onClick={onCloseModal}
+      onClick={handleCloseSidebarMenu}
     >
       <div
         className={`dashboard-layout-sidenavbar__container  ${
@@ -76,7 +96,6 @@ const DashboardSideNavbar: React.FC<Props> = ({
           className="dashboard-layout-sidenavbar__close"
           aria-label="close sidebar menu"
           title="close sidebar menu"
-          onClick={onCloseModal}
         />
         <div
           className={`dashboard-layout-sidenavbar__brand ${

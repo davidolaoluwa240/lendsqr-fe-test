@@ -5,6 +5,8 @@ import React from "react";
 export interface IUIContextType {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  isSidebarMenuOpen: boolean;
+  setIsSidebarMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // SearchContextType Interface

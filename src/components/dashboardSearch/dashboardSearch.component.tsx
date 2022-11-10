@@ -35,7 +35,7 @@ const DashboardSearch: React.FC<Props> = ({
    * Stop Event Propagation
    */
   const onStopPropagation = (e: React.MouseEvent<HTMLDivElement>): void => {
-    e.preventDefault();
+    e.stopPropagation();
   };
 
   return open

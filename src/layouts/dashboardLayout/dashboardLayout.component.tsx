@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 
 // Contexts
-import { SearchContext } from "../../contexts";
+import { SearchContext, UIContext } from "../../contexts";
 
 // Components
 import {
@@ -25,6 +25,8 @@ const DashboardLayout: React.FC<Props> = ({ className }) => {
     toggleSearchModalVisibility,
   } = useContext(SearchContext);
 
+  const { isSidebarMenuOpen, setIsSidebarMenuOpen } = useContext(UIContext);
+
   return (
     <div className={`dashboard-layout ${className}`}>
       <div className="dashboard-layout__container">
@@ -40,7 +42,11 @@ const DashboardLayout: React.FC<Props> = ({ className }) => {
           <DashboardNavbar className="dashboard-layout__navbar" />
         </header>
         <main className="dashboard-layout__main">
-          <DashboardSideNavbar className="dashboard-layout__sidenavbar" />
+          <DashboardSideNavbar
+            className="dashboard-layout__sidenavbar"
+            open={isSidebarMenuOpen}
+            onCloseModal={setIsSidebarMenuOpen}
+          />
         </main>
       </div>
     </div>

@@ -10,13 +10,27 @@ interface Props {
 }
 
 // UI Context
-export const UIContext = createContext<IUIContextType | null>(null);
+export const UIContext = createContext<IUIContextType>({
+  loading: false,
+  isSidebarMenuOpen: false,
+  setLoading: () => {},
+  setIsSidebarMenuOpen: () => {},
+});
 
 // UI Provider
 export const UIProvider: React.FC<Props> = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(false);
+  const [isSidebarMenuOpen, setIsSidebarMenuOpen] = useState<boolean>(false);
+
   return (
-    <UIContext.Provider value={{ loading, setLoading }}>
+    <UIContext.Provider
+      value={{
+        loading,
+        setLoading,
+        isSidebarMenuOpen,
+        setIsSidebarMenuOpen,
+      }}
+    >
       {children}
     </UIContext.Provider>
   );

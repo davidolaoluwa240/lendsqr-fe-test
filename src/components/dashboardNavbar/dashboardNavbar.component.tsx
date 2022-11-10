@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 
 // Contexts
-import { SearchContext } from "../../contexts";
+import { SearchContext, UIContext } from "../../contexts";
 
 // Components
 import { Link } from "react-router-dom";
@@ -32,6 +32,8 @@ const DashboardNavbar: React.FC<Props> = ({ className }) => {
     handleSearch,
   } = useContext(SearchContext);
 
+  const { setIsSidebarMenuOpen } = useContext(UIContext);
+
   return (
     <nav className={`dashboard-layout-navbar ${className}`}>
       <div className="dashboard-layout-navbar__container container">
@@ -39,7 +41,7 @@ const DashboardNavbar: React.FC<Props> = ({ className }) => {
           <MdOutlineMenu
             className="dashboard-layout-navbar__menu-icon"
             aria-label="toggle side navigation"
-            onClick={toggleSearchModalVisibility}
+            onClick={() => setIsSidebarMenuOpen(true)}
           />
           <img
             className="dashboard-layout-navbar__brand-logo"
@@ -88,6 +90,7 @@ const DashboardNavbar: React.FC<Props> = ({ className }) => {
             className="dashboard-layout-navbar__nav-icon dashboard-layout-navbar__nav-icon--search"
             src={lsqrSearch}
             alt="search"
+            onClick={toggleSearchModalVisibility}
           />
           <div className="dashboard-layout-navbar__nav-user">
             <img
