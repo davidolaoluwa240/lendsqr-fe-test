@@ -1,16 +1,16 @@
+// ABSTRACTS
 @import "../../assets/sass/abstracts/functions";
 @import "../../assets/sass/abstracts/mixins";
 @import "../../assets/sass/abstracts/variables";
 
-.dashboard-layout {
-  &__main {
-    @include flex-box();
-    height: 100vh;
+.dashboard-layout-content {
+  height: 100%;
+
+  &__container {
+    max-width: 85% !important;
   }
 
-  &__right {
-    overflow-y: auto;
-    flex-grow: 1;
-    padding-top: 15.9rem;
+  &__loading {
+    @include flex-box(center);
   }
 }

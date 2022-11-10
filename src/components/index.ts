@@ -22,6 +22,9 @@ import DashboardSideNavbarItem from "./dashboardSideNavbar/dashboardSideNavbarIt
 // DashboardSideNavbarItemGroup Component
 import DashboardSideNavbarItemGroup from "./dashboardSideNavbar/dashboardSideNavbarItemGroup/dashboardSideNavbarItemGroup.component";
 
+// DashboardContent Component
+import DashboardContent from "./dashboardContent/dashboardContent.component";
+
 // Re-Export Components
 export {
   Form,
@@ -32,4 +35,5 @@ export {
   DashboardSideNavbar,
   DashboardSideNavbarItem,
   DashboardSideNavbarItemGroup,
+  DashboardContent,
 };

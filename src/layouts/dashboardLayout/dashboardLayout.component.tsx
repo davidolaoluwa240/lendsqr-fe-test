@@ -5,11 +5,16 @@ import React, { useContext } from "react";
 import { SearchContext, UIContext } from "../../contexts";
 
 // Components
+import { Outlet } from "react-router-dom";
 import {
   DashboardNavbar,
   DashboardSearch,
   DashboardSideNavbar,
+  DashboardContent,
 } from "../../components";
+
+// Style
+import "./dashboardLayout.styles.scss";
 
 // Interfaces
 interface Props {
@@ -25,7 +30,8 @@ const DashboardLayout: React.FC<Props> = ({ className }) => {
     toggleSearchModalVisibility,
   } = useContext(SearchContext);
 
-  const { isSidebarMenuOpen, setIsSidebarMenuOpen } = useContext(UIContext);
+  const { isSidebarMenuOpen, setIsSidebarMenuOpen, loading } =
+    useContext(UIContext);
 
   return (
     <div className={`dashboard-layout ${className}`}>
@@ -42,11 +48,21 @@ const DashboardLayout: React.FC<Props> = ({ className }) => {
           <DashboardNavbar className="dashboard-layout__navbar" />
         </header>
         <main className="dashboard-layout__main">
-          <DashboardSideNavbar
-            className="dashboard-layout__sidenavbar"
-            open={isSidebarMenuOpen}
-            onCloseModal={setIsSidebarMenuOpen}
-          />
+          <div className="dashboard-layout__left">
+            <DashboardSideNavbar
+              className="dashboard-layout__sidenavbar"
+              open={isSidebarMenuOpen}
+              onCloseModal={setIsSidebarMenuOpen}
+            />
+          </div>
+          <div className="dashboard-layout__right">
+            <DashboardContent
+              className="dashboard-layout__content"
+              isLoading={loading}
+            >
+              <Outlet />
+            </DashboardContent>
+          </div>
         </main>
       </div>
     </div>
