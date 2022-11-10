@@ -1,5 +1,8 @@
 // Modules
-import React from "react";
+import React, { useContext } from "react";
+
+// Contexts
+import { SearchContext } from "../../contexts";
 
 // Components
 import {
@@ -14,14 +17,24 @@ interface Props {
 }
 
 const DashboardLayout: React.FC<Props> = ({ className }) => {
+  const {
+    searchTerm,
+    setSearchTerm,
+    handleSearch,
+    open,
+    toggleSearchModalVisibility,
+  } = useContext(SearchContext);
+
   return (
     <div className={`dashboard-layout ${className}`}>
       <div className="dashboard-layout__container">
         <DashboardSearch
           className="dashboard-layout__search"
-          open={false}
-          searchTerm=""
-          setSearchTerm={() => undefined}
+          open={open}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          handleSearch={handleSearch}
+          onCloseClick={toggleSearchModalVisibility}
         />
         <header className="dashboard-layout__header">
           <DashboardNavbar className="dashboard-layout__navbar" />

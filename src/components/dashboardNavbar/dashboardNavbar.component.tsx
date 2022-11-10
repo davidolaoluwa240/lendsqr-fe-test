@@ -1,5 +1,8 @@
 // Modules
-import React, { useState } from "react";
+import React, { useContext } from "react";
+
+// Contexts
+import { SearchContext } from "../../contexts";
 
 // Components
 import { Link } from "react-router-dom";
@@ -22,7 +25,12 @@ interface Props {
 }
 
 const DashboardNavbar: React.FC<Props> = ({ className }) => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const {
+    searchTerm,
+    setSearchTerm,
+    toggleSearchModalVisibility,
+    handleSearch,
+  } = useContext(SearchContext);
 
   return (
     <nav className={`dashboard-layout-navbar ${className}`}>
@@ -31,6 +39,7 @@ const DashboardNavbar: React.FC<Props> = ({ className }) => {
           <MdOutlineMenu
             className="dashboard-layout-navbar__menu-icon"
             aria-label="toggle side navigation"
+            onClick={toggleSearchModalVisibility}
           />
           <img
             className="dashboard-layout-navbar__brand-logo"
@@ -41,7 +50,7 @@ const DashboardNavbar: React.FC<Props> = ({ className }) => {
         <div className="dashboard-layout-navbar__search">
           <Form
             className="dashboard-layout-navbar__search-form"
-            handleSubmit={(e) => e.preventDefault()}
+            handleSubmit={handleSearch}
           >
             <Input
               className="dashboard-layout-navbar__search-control"

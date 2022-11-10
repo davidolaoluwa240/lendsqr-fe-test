@@ -20,6 +20,7 @@ interface Props {
   searchTerm: string;
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
   onCloseClick?: () => void;
+  handleSearch?: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const DashboardSearch: React.FC<Props> = ({
@@ -28,11 +29,25 @@ const DashboardSearch: React.FC<Props> = ({
   onCloseClick,
   searchTerm,
   setSearchTerm,
+  handleSearch,
 }) => {
+  /**
+   * Stop Event Propagation
+   */
+  const onStopPropagation = (e: React.MouseEvent<HTMLDivElement>): void => {
+    e.preventDefault();
+  };
+
   return open
     ? createPortal(
-        <div className={`dashboard-layout-search modal ${className}`}>
-          <div className="dashboard-layout-search__container container">
+        <div
+          className={`dashboard-layout-search modal ${className}`}
+          onClick={onCloseClick}
+        >
+          <div
+            className="dashboard-layout-search__container container"
+            onClick={onStopPropagation}
+          >
             <MdClose
               className="dashboard-layout-search__close"
               title="close search"
@@ -41,7 +56,7 @@ const DashboardSearch: React.FC<Props> = ({
             />
             <Form
               className="dashboard-layout-search__form dashboard-layout-navbar__search-form"
-              handleSubmit={(e) => e.preventDefault()}
+              handleSubmit={handleSearch}
             >
               <Input
                 className="dashboard-layout-search__control dashboard-layout-navbar__search-control"
@@ -52,7 +67,10 @@ const DashboardSearch: React.FC<Props> = ({
                 placeholder="Search for anything"
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <Button className="dashboard-layout-search__btn dashboard-layout-navbar__search-btn btn--primary">
+              <Button
+                type="submit"
+                className="dashboard-layout-search__btn dashboard-layout-navbar__search-btn btn--primary"
+              >
                 {/* TODO: Replace with svg sprite */}
                 <img
                   className="dashboard-layout-search__btn-icon dashboard-layout-navbar__search-btn-icon"
