@@ -27,7 +27,7 @@
 
   &__container--open {
     @media screen and (max-width: 1000px) {
-      transform: translateX(0);
+      transform: translateX(0%);
     }
   }
 
