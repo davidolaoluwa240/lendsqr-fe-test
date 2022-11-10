@@ -25,6 +25,12 @@ import DashboardSideNavbarItemGroup from "./dashboardSideNavbar/dashboardSideNav
 // DashboardContent Component
 import DashboardContent from "./dashboardContent/dashboardContent.component";
 
+// Paper Component
+import Paper from "./paper/paper.component";
+
+// UserStats Component
+import UserStats from "./userStats/userStats.component";
+
 // Re-Export Components
 export {
   Form,
@@ -36,4 +42,6 @@ export {
   DashboardSideNavbarItem,
   DashboardSideNavbarItemGroup,
   DashboardContent,
+  Paper,
+  UserStats,
 };

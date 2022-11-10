@@ -1,6 +1,9 @@
 // Modules
 import React from "react";
 
+// Components
+import { UserStats } from "../../components";
+
 // Interfaces
 interface Props {
   className?: string;
@@ -13,6 +16,7 @@ const Users: React.FC<Props> = ({ className }) => {
         <h2 className="users__heading secondary-heading is-text-primary-color">
           Users
         </h2>
+        <UserStats className="users__stats" />
       </div>
     </div>
   );

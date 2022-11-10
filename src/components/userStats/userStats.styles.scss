@@ -1,0 +1,29 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.user-stats {
+  margin: 4rem 0;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.6rem;
+  }
+
+  &__box {
+    padding: 2rem 3rem;
+  }
+
+  &__text {
+    margin-top: 1.4rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: getWeight("thick");
+  }
+
+  &__number {
+    font-weight: getWeight("extra-thick");
+  }
+}
