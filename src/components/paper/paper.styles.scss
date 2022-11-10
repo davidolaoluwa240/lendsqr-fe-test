@@ -1,0 +1,11 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.paper {
+  background: getColor("white-color");
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(getColor("dark-color"), 0.04);
+  border-radius: 4px;
+}

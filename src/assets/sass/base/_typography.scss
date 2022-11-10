@@ -8,8 +8,15 @@ body {
 
 .primary-heading {
   font-weight: getWeight("bold");
-  font-family: map-get($map: $font-family, $key: "font-family-secondary");
+  font-family: inherit;
   font-size: 4rem;
   line-height: 54.64px;
   letter-spacing: -4%;
+}
+
+.secondary-heading {
+  font-family: inherit;
+  font-weight: getWeight("thick");
+  font-size: 2.4rem;
+  line-height: 28px;
 }
