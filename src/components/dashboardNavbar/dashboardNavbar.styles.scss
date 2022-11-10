@@ -1,0 +1,155 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.dashboard-layout-navbar {
+  background: getColor("white-color");
+  box-shadow: 3px 0px 20px rgba(getColor("dark-color"), 0.04);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+
+  &__container {
+    @include flex-box($align-items: center);
+    max-width: 95% !important;
+    padding: 3.5rem 0;
+  }
+
+  &__brand {
+    margin-right: 16.8rem;
+
+    @include respond(tab-land) {
+      margin-right: 10.8rem;
+    }
+
+    @include respond(phone) {
+      margin-right: 0px;
+    }
+  }
+
+  &__menu-icon {
+    display: none;
+    font-size: 4.2rem;
+    color: inherit;
+    vertical-align: middle;
+    font-weight: getWeight("bold");
+
+    @media screen and (max-width: 1000px) {
+      display: inline-block;
+    }
+  }
+
+  &__brand-logo {
+    width: 144.8px;
+    height: 30px;
+    vertical-align: middle;
+
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__search {
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__search-form {
+    min-width: 400px;
+    position: relative;
+  }
+
+  &__search-control {
+    padding: 1.2rem 2rem;
+    padding-right: 0px;
+    background: rgba(getColor("white-color"), 0.2);
+    border-radius: 8px;
+    border: 1px solid rgba(getColor("primary-color"), 0.2);
+  }
+
+  &__search-btn {
+    @include absCenter;
+    transform: translate(0%, -50%);
+    left: auto;
+    right: 0;
+    height: 100%;
+    padding: 0px 2.1rem;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  &__search-btn-icon {
+    vertical-align: middle;
+  }
+
+  &__nav {
+    flex-grow: 1;
+    @include flex-box(flex-end, center);
+  }
+
+  &__nav-link {
+    text-decoration: underline;
+    line-height: 19px;
+    color: getColor("primary-color");
+    font-family: map-get($map: $font-family, $key: font-family-tertiary);
+
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__nav-icon {
+    margin-left: 5rem;
+    margin-right: 3.3rem;
+    cursor: pointer;
+    vertical-align: middle;
+
+    @include respond(tab-land) {
+      margin-right: 2.5rem;
+      margin-left: 3rem;
+    }
+  }
+
+  &__nav-icon--notification {
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__nav-icon--search {
+    display: none;
+    background: getColor("secondary-color");
+    border-radius: 9999px;
+    padding: 1.3rem;
+    object-fit: cover;
+
+    @media screen and (max-width: 1000px) {
+      display: block;
+    }
+  }
+
+  &__nav-user {
+    @include flex-box($align-items: center);
+    position: relative;
+  }
+
+  &__nav-user-photo {
+    vertical-align: middle;
+    border-radius: 9999px;
+    width: 48px;
+    height: 48px;
+    margin-right: 1rem;
+  }
+
+  &__nav-user-name {
+    color: getColor("primary-color");
+    font-weight: getWeight("thick");
+    line-height: 19px;
+    margin-right: 1rem;
+  }
+}

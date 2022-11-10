@@ -6,11 +6,11 @@
 .page-not-found {
   &__container {
     min-height: 100vh;
-    max-width: 600px;
+    max-width: 600px !important;
     @include flex-box(center, center, column);
 
     @include respond(phone) {
-      max-width: 92%;
+      max-width: 92% !important;
     }
   }
 
@@ -23,7 +23,7 @@
   }
 
   &__heading {
-    font-size: 4.8rem;
+    font-size: 4.6rem;
     margin: 2.9rem 0;
     color: getColor("secondary-color");
     line-height: 28px;

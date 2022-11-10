@@ -8,7 +8,7 @@ import { Login, PageNotFound } from "../pages";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Layouts
-import { AuthLayout } from "../layouts";
+import { AuthLayout, DashboardLayout } from "../layouts";
 
 // Style
 import "./app.styles.scss";
@@ -21,6 +21,9 @@ const App: React.FC = () => {
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Navigate to="/auth/login" />} />
           <Route path="login" element={<Login />} />
+        </Route>
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route path="users" element={<DashboardLayout />}></Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

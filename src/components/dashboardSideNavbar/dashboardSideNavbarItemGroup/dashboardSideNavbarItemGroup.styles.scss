@@ -1,0 +1,15 @@
+// ABSTRACTS
+@import "../../../assets/sass/abstracts/functions";
+@import "../../../assets/sass/abstracts/mixins";
+@import "../../../assets/sass/abstracts/variables";
+
+.dashboard-layout-sidenavbar {
+  &__item-group {
+    margin-bottom: 1rem;
+    margin-top: 3.3rem;
+    font-size: 1.2rem;
+    line-height: 14px;
+    font-weight: getWeight("thick");
+    text-transform: uppercase;
+  }
+}

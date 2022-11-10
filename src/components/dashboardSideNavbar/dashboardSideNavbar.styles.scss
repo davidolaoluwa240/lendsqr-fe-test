@@ -1,0 +1,74 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.dashboard-layout-sidenavbar {
+  &__container {
+    width: 283px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: getColor("white-color");
+    box-shadow: 0px 5px 20px rgba(getColor("dark-color"), 0.04);
+    padding-top: 15.9rem;
+    padding-bottom: 2rem;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+
+    @media screen and (max-width: 1000px) {
+      transform: translateX(-100%);
+      opacity: 0;
+      padding-top: 4.5rem;
+    }
+
+    @media screen and (max-width: 320px) {
+      width: 100%;
+    }
+  }
+
+  &__container--open {
+    @media screen and (max-width: 1000px) {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    width: 15px;
+    height: 15px;
+    background: getColor("secondary-color");
+    color: getColor("white-color");
+  }
+
+  &__brand {
+    margin-bottom: 4.5rem;
+  }
+
+  &__brand-logo {
+    width: 134.8px;
+    height: 30px;
+  }
+
+  &__icon-left {
+    margin-right: 1rem;
+    vertical-align: middle;
+  }
+
+  &__icon-right {
+    margin-left: 1.039rem;
+    vertical-align: middle;
+  }
+
+  &__link-container,
+  &__item-container,
+  &__item-group-container,
+  &__brand-container {
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}

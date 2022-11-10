@@ -1,0 +1,37 @@
+// ABSTRACTS
+@import "../../../assets/sass/abstracts/functions";
+@import "../../../assets/sass/abstracts/mixins";
+@import "../../../assets/sass/abstracts/variables";
+
+%sidenavbar-link-hover-placeholder {
+  background: rgba(getColor("secondary-color"), 0.06);
+  border-left-color: getColor("secondary-color") !important;
+}
+
+.dashboard-layout-sidenavbar {
+  &__item--organization {
+    color: getColor("primary-color");
+    margin-bottom: 3.5rem;
+    cursor: pointer;
+  }
+
+  &__link {
+    line-height: 19px;
+    cursor: pointer;
+    display: block;
+    padding: 1rem 0px 1.1rem 0px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 1.2rem;
+    color: rgba(getColor("primary-color"), 0.6);
+
+    &:hover {
+      @extend %sidenavbar-link-hover-placeholder;
+    }
+  }
+
+  &__link--active {
+    color: getColor("primary-color");
+    @extend %sidenavbar-link-hover-placeholder;
+  }
+}
