@@ -2,7 +2,7 @@
 import React from "react";
 
 // Pages
-import { Login, PageNotFound } from "../pages";
+import { Login, PageNotFound, Users } from "../pages";
 
 // Components
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -28,7 +28,7 @@ const App: React.FC = () => {
               <Route path="login" element={<Login />} />
             </Route>
             <Route path="/dashboard" element={<DashboardLayout />}>
-              <Route path="users" element={<DashboardLayout />}></Route>
+              <Route path="users" element={<Users />}></Route>
             </Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
