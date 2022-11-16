@@ -1,9 +1,6 @@
 # LENDSQR FULL STACK ASSESSMENT CHALLENGE
 
 ### The challenge
-
-Users should be able to:
-
 - Build the 4 pages Login, Dashboard, User page, User details page
 - The user pages should pull data from a mock api with 500 records
 - Use local storage or indexedDB to store and retrieve user details on the user details page.
@@ -13,7 +10,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/davidolaoluwa240/lendsqr-fe-test](https://github.com/davidolaoluwa240/lendsqr-fe-test)
-- Live Site URL: [https://atebisun-david-lendsqr-fe-test.vercel.app/]https://atebisun-david-lendsqr-fe-test.vercel.app/)
+- Live Site URL: [https://atebisun-david-lendsqr-fe-test.vercel.app/](https://atebisun-david-lendsqr-fe-test.vercel.app/)
 
 ## Available Scripts
 
