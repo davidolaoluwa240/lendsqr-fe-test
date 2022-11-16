@@ -25,10 +25,10 @@ export const UIProvider: React.FC<Props> = ({ children }) => {
   return (
     <UIContext.Provider
       value={{
-        loading,
-        setLoading,
         isSidebarMenuOpen,
         setIsSidebarMenuOpen,
+        loading,
+        setLoading,
       }}
     >
       {children}

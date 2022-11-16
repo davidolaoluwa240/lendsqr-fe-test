@@ -1,0 +1,105 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.user-table-box {
+  padding: 3rem 3rem 0px 3rem;
+}
+
+.user-table {
+  width: 929.5px;
+  table-layout: fixed;
+  position: relative;
+
+  @media screen and (min-width: 1396px) {
+    width: 100%;
+  }
+
+  &__head-data {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: getWeight("extra-thick");
+    line-height: 14px;
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+  }
+
+  &__head-icon {
+    margin-left: 1rem;
+    width: 16px;
+    height: 10px;
+    vertical-align: middle;
+  }
+
+  &__body-data-empty {
+    height: 150px;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: getWeight("bold");
+  }
+
+  &__body-row-line {
+    width: 100%;
+    position: absolute;
+    border: 1px solid rgba(33, 63, 125, 0.1);
+  }
+
+  &__body-data {
+    padding: 2.3rem 0px;
+    font-size: 1.4rem;
+    line-height: 16px;
+    word-wrap: break-word;
+    color: getColor("tertiary-color");
+
+    &:not(:last-child) {
+      padding-right: 2rem;
+    }
+  }
+
+  &__body-btn {
+    padding: 0.7rem 1.3rem 0.6rem 1.3rem;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  &__body-btn--active {
+    color: getColor("accent-1-color");
+    background: rgba(getColor("accent-1-color"), 0.06);
+  }
+
+  &__body-btn--inactive {
+    color: getColor("tertiary-color");
+    background: rgba(getColor("tertiary-color"), 0.06);
+  }
+
+  &__body-data--status {
+    @include flex-box(space-between);
+    padding-right: 20%;
+    position: relative;
+  }
+
+  &__body-data-dropdown {
+    position: absolute;
+    z-index: 2;
+    right: 4%;
+    top: 80%;
+    min-width: 180px;
+  }
+
+  &__body-data-dropdown-link {
+    padding: 1.7rem 2rem;
+    display: block;
+    @include flex-box($align-items: center);
+    transition: all 0.3s linear;
+
+    &:hover {
+      background: rgba(getColor("tertiary-color"), 0.06);
+    }
+  }
+
+  &__body-data-dropdown-icon {
+    margin-right: 0.8rem;
+  }
+}

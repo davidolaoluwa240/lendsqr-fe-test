@@ -53,10 +53,10 @@
 }
 
 // SHOW
-
 .visibility-visible {
   visibility: visible !important;
 }
+
 // Display
 .d-block {
   display: block !important;
@@ -97,4 +97,13 @@
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+}
+
+// CURSOR
+.is-cursor-pointer {
+  cursor: pointer;
+}
+
+.is-cursor-default {
+  cursor: default;
 }

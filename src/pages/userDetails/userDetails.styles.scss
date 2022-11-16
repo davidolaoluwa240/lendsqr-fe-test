@@ -1,0 +1,65 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.user-details {
+  &__back {
+    line-height: 19px;
+    display: block;
+    margin-bottom: 3.2rem;
+    cursor: pointer;
+  }
+
+  &__back-icon {
+    margin-right: 1.4rem;
+    vertical-align: middle;
+  }
+
+  &__header {
+    @include flex-box($align-items: center);
+    margin-bottom: 4.6rem;
+  }
+
+  &__header-btn {
+    background-color: transparent !important;
+    font-weight: getWeight("extra-thick") !important;
+    font-size: 1.4rem !important;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-left: 1.6rem !important;
+    padding-right: 1.6rem !important;
+
+    &:first-of-type {
+      margin-left: auto;
+    }
+  }
+
+  &__header-btn--activate {
+    border-color: getColor("secondary-color");
+    color: getColor("secondary-color");
+  }
+
+  &__header-btn--blacklist {
+    border-color: getColor("accent-3-color");
+    color: getColor("accent-3-color");
+    margin-right: 2rem;
+  }
+
+  @media screen and (max-width: 455px) {
+    &__header {
+      display: block !important;
+    }
+
+    &__header-btn {
+      width: 100%;
+
+      &:first-of-type {
+        margin-left: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

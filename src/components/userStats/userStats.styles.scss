@@ -10,10 +10,26 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2.6rem;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond(phone) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 370px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__box {
     padding: 2rem 3rem;
+
+    @media screen and (max-width: 370px) {
+      @include flex-box(center, center, column);
+    }
   }
 
   &__text {
@@ -24,6 +40,6 @@
   }
 
   &__number {
-    font-weight: getWeight("extra-thick");
+    font-weight: getWeight("extra-thick") !important;
   }
 }

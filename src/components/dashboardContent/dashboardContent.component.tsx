@@ -1,8 +1,11 @@
 // Modules
-import React from "react";
+import React, { useContext } from "react";
 
 // Components
 import { Bars } from "react-loader-spinner";
+
+// Contexts
+import { UIContext } from "../../contexts";
 
 // Style
 import "./dashboardContent.styles.scss";
@@ -11,28 +14,34 @@ import "./dashboardContent.styles.scss";
 interface Props {
   className?: string;
   children: React.ReactNode;
-  isLoading?: boolean;
 }
 
-const DashboardContent: React.FC<Props> = ({
-  children,
-  className,
-  isLoading,
-}) => {
+const DashboardContent: React.FC<Props> = ({ children, className }) => {
+  const { loading } = useContext(UIContext);
+
   return (
     <div className={`dashboard-layout-content ${className}`}>
-      <div className="dashboard-layout-content__container container">
-        {isLoading && (
-          <Bars
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="content loading"
-            wrapperClass="dashboard-layout-content__loading"
-            visible={true}
-          />
-        )}
-        {!isLoading && children}
+      <div
+        className={`dashboard-layout-content__container container ${
+          loading ? "" : "d-none"
+        }`}
+      >
+        <Bars
+          height="80"
+          width="80"
+          color="#4fa94d"
+          ariaLabel="content loading"
+          wrapperClass="dashboard-layout-content__loading"
+          visible={true}
+        />
+      </div>
+
+      <div
+        className={`dashboard-layout-content__container container ${
+          !loading ? "" : "d-none"
+        }`}
+      >
+        {children}
       </div>
     </div>
   );
@@ -40,7 +49,6 @@ const DashboardContent: React.FC<Props> = ({
 
 DashboardContent.defaultProps = {
   className: "",
-  isLoading: false,
 };
 
 export default DashboardContent;

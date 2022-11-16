@@ -4,6 +4,9 @@ import Form from "./form/form.component";
 // Input Component
 import Input from "./input/input.component";
 
+// InputSelect Component
+import InputSelect from "./inputSelect/inputSelect.component";
+
 // Button Component
 import Button from "./button/button.component";
 
@@ -31,10 +34,26 @@ import Paper from "./paper/paper.component";
 // UserStats Component
 import UserStats from "./userStats/userStats.component";
 
+// Table Component
+import UserTable from "./userTable/userTable.component";
+
+// UserTableHeadFilter Component
+import UserTableHeadFilter from "./userTableHeadFilter/userTableHeadFilter.component";
+
+// Pagination Component
+import Pagination from "./pagination/pagination.component";
+
+// UserDetailsInfo Component
+import UserDetailsInfo from "./userDetailsInfo/userDetailsInfo.component";
+
+// UserDetailsGeneralInfo Component
+import UserDetailsGeneralInfo from "./userDetailsGeneralInfo/userDetailsGeneralInfo.component";
+
 // Re-Export Components
 export {
   Form,
   Input,
+  InputSelect,
   Button,
   DashboardNavbar,
   DashboardSearch,
@@ -44,4 +63,9 @@ export {
   DashboardContent,
   Paper,
   UserStats,
+  UserTable,
+  UserTableHeadFilter,
+  Pagination,
+  UserDetailsInfo,
+  UserDetailsGeneralInfo,
 };

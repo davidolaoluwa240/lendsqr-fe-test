@@ -13,7 +13,10 @@ const Form: React.FC<Props> = ({ className, handleSubmit, children }) => {
     <form
       autoComplete="off"
       className={`form ${className}`}
-      onSubmit={handleSubmit}
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit?.(e);
+      }}
     >
       {children}
     </form>

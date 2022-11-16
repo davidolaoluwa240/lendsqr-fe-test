@@ -1,3 +1,6 @@
+// Models
+import { IOptionType } from "../components/inputSelect/inputSelect.component";
+
 // Assets
 import lsqrHomeOutline from "../assets/icons/lsqr-home-outline.svg";
 import lsqrUserFriends from "../assets/icons/lsqr-user-friends.svg";
@@ -22,6 +25,7 @@ import lsqrClipboardListOutline from "../assets/icons/lsqr-clipboard-list-outlin
 
 // TODO: replace icon with svg sprite later
 
+// Side Navbar List
 export const sideNavbarList = [
   {
     icon: lsqrHomeOutline,
@@ -119,5 +123,39 @@ export const sideNavbarList = [
         to: "/dashboard/audit-logs",
       },
     ],
+  },
+];
+
+// User Table Head Items
+export const userTableHeadItems = [
+  "Organization",
+  "Username",
+  "Email",
+  "Phone number",
+  "Date joined",
+  "Status",
+];
+
+// User Filter Status Items
+export const statusItems: IOptionType[] = [
+  {
+    key: 1,
+    label: "Select",
+  },
+  {
+    key: 2,
+    label: "Active",
+  },
+  {
+    key: 3,
+    label: "Inactive",
+  },
+  {
+    key: 4,
+    label: "Pending",
+  },
+  {
+    key: 5,
+    label: "Blacklisted",
   },
 ];

@@ -1,6 +1,9 @@
 // Modules
 import React, { useState } from "react";
 
+// Icons
+import lsqrDate from "../../assets/icons/lsqr-date.svg";
+
 // Style
 import "./input.styles.scss";
 
@@ -55,6 +58,11 @@ const Input: React.FC<Props> = ({
     </span>
   );
 
+  // Render Date Icon Conditionally
+  const renderedDateIcon = type === "date" && (
+    <img className="form__date-icon" src={lsqrDate} alt="date" />
+  );
+
   // Render Error Element Conditionally
   const renderedError = error && touched && (
     <div className="form__error-wrapper">
@@ -77,6 +85,7 @@ const Input: React.FC<Props> = ({
           value={value}
         />
         {renderedPasswordVisibility}
+        {renderedDateIcon}
       </div>
       {renderedError}
     </div>

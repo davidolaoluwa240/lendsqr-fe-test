@@ -2,6 +2,9 @@ $colors: (
   "primary-color": #213f7d,
   "secondary-color": #39cdcc,
   "tertiary-color": #545f7d,
+  "accent-1-color": #39cd62,
+  "accent-2-color": #e9b200,
+  "accent-3-color": #e4033b,
   "danger-color": #c80707,
   "white-color": #ffffff,
   "dark-color": #000000,
@@ -64,4 +67,5 @@ $button-sizes: (
 
 $button-shapes: (
   rsm: 8px,
+  rmd: 100px,
 );

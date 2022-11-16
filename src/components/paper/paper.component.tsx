@@ -8,10 +8,15 @@ import "./paper.styles.scss";
 interface Props {
   className?: string;
   children: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-const Paper: React.FC<Props> = ({ className, children }) => {
-  return <div className={`paper ${className}`}>{children}</div>;
+const Paper: React.FC<Props> = ({ className, children, onClick }) => {
+  return (
+    <div className={`paper ${className}`} onClick={onClick}>
+      {children}
+    </div>
+  );
 };
 
 Paper.defaultProps = {

@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 
 // Components
 import { MdClose } from "react-icons/md";
+import { Link } from "react-router-dom";
 import { DashboardSideNavbarItem, DashboardSideNavbarItemGroup } from "../";
 
 // Assets
@@ -103,11 +104,16 @@ const DashboardSideNavbar: React.FC<Props> = ({
           }`}
         >
           <div className="dashboard-layout-sidenavbar__brand-container">
-            <img
-              className="dashboard-layout-sidenavbar__brand-logo"
-              src={lendsqrLogo}
-              alt="lendsqr logo"
-            />
+            <Link
+              to="/auth/login"
+              className="dashboard-layout-sidenavbar__brand-link"
+            >
+              <img
+                className="dashboard-layout-sidenavbar__brand-logo"
+                src={lendsqrLogo}
+                alt="lendsqr logo"
+              />
+            </Link>
           </div>
         </div>
         <ul className="dashboard-layout-sidenavbar__list">

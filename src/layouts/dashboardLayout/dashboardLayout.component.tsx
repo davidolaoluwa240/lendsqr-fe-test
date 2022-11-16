@@ -29,9 +29,7 @@ const DashboardLayout: React.FC<Props> = ({ className }) => {
     open,
     toggleSearchModalVisibility,
   } = useContext(SearchContext);
-
-  const { isSidebarMenuOpen, setIsSidebarMenuOpen, loading } =
-    useContext(UIContext);
+  const { isSidebarMenuOpen, setIsSidebarMenuOpen } = useContext(UIContext);
 
   return (
     <div className={`dashboard-layout ${className}`}>
@@ -56,10 +54,7 @@ const DashboardLayout: React.FC<Props> = ({ className }) => {
             />
           </div>
           <div className="dashboard-layout__right">
-            <DashboardContent
-              className="dashboard-layout__content"
-              isLoading={loading}
-            >
+            <DashboardContent className="dashboard-layout__content">
               <Outlet />
             </DashboardContent>
           </div>

@@ -1,0 +1,134 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.user-details__info {
+  padding: 3rem;
+  padding-bottom: 0;
+
+  &-header {
+    @include flex-box();
+
+    @include respond(phone) {
+      display: block !important;
+    }
+  }
+
+  &-detail {
+    @include flex-box($align-items: center);
+    padding-right: 3rem;
+
+    @include respond(phone) {
+      padding-right: 0;
+    }
+  }
+
+  &-detail-username,
+  &-detail-code {
+    display: block;
+    margin-left: 2rem;
+  }
+
+  &-detail-username {
+    font-weight: getWeight("thick");
+    font-size: 2.2rem;
+    line-height: 26px;
+    color: getColor("primary-color");
+    margin-bottom: 0.8rem;
+  }
+
+  &-detail-code {
+    font-size: 1.4rem;
+    line-height: 16px;
+  }
+
+  &-rating-wrapper {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-left: 1px solid rgba(getColor("tertiary-color"), 0.2);
+    border-right: 1px solid rgba(getColor("tertiary-color"), 0.2);
+    @include flex-box(center, flex-start, column);
+
+    @include respond(phone) {
+      border-color: transparent;
+      padding-right: 0;
+      margin-top: 2rem;
+      padding-left: 2rem;
+    }
+  }
+
+  &-rating-text {
+    font-weight: getWeight("thick");
+    font-size: 1.4rem;
+    line-height: 16px;
+    margin-bottom: 1.1rem;
+  }
+
+  &-rating {
+    &:not(:last-of-type) {
+      margin-right: 0.6rem;
+    }
+  }
+
+  &-account {
+    padding-left: 3rem;
+    @include flex-box(center, flex-start, column);
+
+    @include respond(phone) {
+      padding-left: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &-account-balance {
+    font-weight: getWeight("thick");
+    font-size: 2.2rem;
+    line-height: 26px;
+    color: getColor("primary-color");
+    margin-bottom: 1.2rem;
+  }
+
+  &-account-bank {
+    font-size: 1.2rem;
+    line-height: 14px;
+    color: getColor("primary-color");
+  }
+
+  &-navigation {
+    margin-top: 5.1rem;
+  }
+
+  &-nav-list {
+    @include flex-box(space-between);
+
+    @include respond(tab-land) {
+      flex-wrap: wrap !important;
+    }
+
+    @include respond(phone) {
+      display: block !important;
+    }
+  }
+
+  &-nav-item {
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      border-color: getColor("secondary-color");
+    }
+
+    @include respond(tab-land) {
+      margin-top: 1.8rem;
+    }
+  }
+
+  &-nav-item--active {
+    border-color: getColor("secondary-color");
+  }
+}

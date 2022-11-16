@@ -1,0 +1,37 @@
+// ABSTRACTS
+@import "../../assets/sass/abstracts/functions";
+@import "../../assets/sass/abstracts/mixins";
+@import "../../assets/sass/abstracts/variables";
+
+.user-table-filter {
+  min-width: 270px;
+  max-width: 270px;
+  padding: 3rem 2rem;
+  padding-bottom: 2rem;
+  position: absolute;
+  z-index: 1;
+  left: -20%;
+  margin-top: 14px;
+  border: 1px solid rgba(84, 95, 125, 0.14) !important;
+
+  &__group {
+    margin-bottom: 2rem;
+  }
+
+  &__control {
+    padding: 1.2rem 2rem !important;
+    border-radius: 8px !important;
+    line-height: 16px !important;
+    font-size: 1.4rem !important;
+  }
+
+  &__btn-group {
+    margin-top: 3rem;
+    @include flex-box(space-between);
+  }
+
+  &__btn {
+    font-size: 1.4rem;
+    font-weight: getWeight("extra-thick");
+  }
+}
