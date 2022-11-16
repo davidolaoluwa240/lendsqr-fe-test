@@ -13,7 +13,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/davidolaoluwa240/lendsqr-fe-test](https://github.com/davidolaoluwa240/lendsqr-fe-test)
-- Live Site URL: [https://atebisun-david-lendsqr-fe-test.vercel.app/)
+- Live Site URL: [https://atebisun-david-lendsqr-fe-test.vercel.app/]https://atebisun-david-lendsqr-fe-test.vercel.app/)
 
 ## Available Scripts
 
